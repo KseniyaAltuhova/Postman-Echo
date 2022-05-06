@@ -33,20 +33,20 @@ public class PostmanEchoTest {
                 .then()
                 .statusCode(200)
                 .contentType(ContentType.JSON)
-                .body("data", equalTo("currency:USD"));
+                .body("data", equalTo("currency:RUB"));
     }
 
     @Test
     void shouldReturnId() {
         given()
                 .baseUri("https://postman-echo.com")
-                .body("id:3")
+                .body("id:2")
                 .when()
                 .post("/post")
                 .then()
                 .statusCode(200)
                 .contentType(ContentType.JSON)
-                .body("data", equalTo("id:3"));
+                .body("data", equalTo("id:2"));
     }
 
 }
